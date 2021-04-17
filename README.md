@@ -31,3 +31,8 @@ and so on.
 
 ## Solution
 quick and dirty python program with todo for develop this prototype to fully grown up software application.
+"Algorithm" is a simple ordering solution.
+Order the list in priority, (or you could create a hashmap for it), 
+pick the items with highest priority.
+If it doesnt fit in current cargo space, split it and take the rest in cargo space 2.
+If there is free space? which can be filled from lower priority cargo it will be filled.
