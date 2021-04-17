@@ -1,0 +1,27 @@
+@startuml
+
+actor Cargofiller
+participant Cargostore as C1
+participant Transporter1 as T1
+participant Transporter2 as T2
+
+activate Cargofiller
+activate Cargostore
+
+Cargofiller -> C1: Order cargo by highest priority downwards
+C1 --> Cargofiller: All caro is orderd
+Cargofiller -> T1: fill until all cargo space is gone (highest prio. first)
+T1 --> Cargofiller: no space left
+Cargofiller -> T2: fill until all cargo space is gone (highest prio. first)
+T2 --> Cargofiller: no space left
+
+activate Cargofiller
+Cargofiller --> Cargofiller: Transporter1 and Transporter2 are good to go
+
+deactivate Cargostore
+deactivate Cargofiller
+
+activate T1
+activate T2
+
+@enduml
